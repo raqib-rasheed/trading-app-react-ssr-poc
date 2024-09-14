@@ -1,0 +1,50 @@
+@import '@shared/styles/tokens';
+@import '@shared/styles/mixins';
+
+.input {
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    color: $text-colour--primary;
+  }
+
+  
+
+  &__element {
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid $color-primary;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease;
+    background-color: lightyellow;
+    color: #000;
+    
+    &:focus {
+      outline: none;
+      border-color: $color-primary--highlight;
+    }
+  }
+  
+  &--error {
+    border-color: $color-danger;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+      border-color: $color-danger--highlight;
+    }
+  }
+  
+  
+  &--disabled {
+    background-color: $text-colour--secondary;
+    border-color: $text-colour--primary;
+    cursor: not-allowed;
+    color: $text-colour--primary;
+  }
+
+}

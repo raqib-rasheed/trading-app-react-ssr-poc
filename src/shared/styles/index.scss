@@ -1,0 +1,34 @@
+@import 'tokens';
+@import 'mixins';
+
+@font-face {
+  font-family: DIN Next TR Regular;
+  src: url(/fonts/DINNextLTPro-Regular.woff) format('woff'), url(/fonts/DINNextLTPro-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: DIN Next TR Medium;
+  src: url(/fonts/DINNextLTPro-Medium.woff) format('woff'), url(/fonts/DINNextLTPro-Medium.woff2) format('woff2');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: DIN Next TR Bold;
+  src: url(/fonts/DINNextLTPro-Bold.woff) format('woff'), url(/fonts/DINNextLTPro-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: DIN Next TR, -apple-system, system-ui, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  background-color: $background-colour--primary;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

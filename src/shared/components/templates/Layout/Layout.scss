@@ -1,0 +1,151 @@
+@use "@shared/styles/tokens" as t;
+
+@import "@shared/styles/mixins";
+
+.layout {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+
+  &__sider {
+    width: 18rem;
+    transform: translateX(0);
+    transition: transform 0.7s ease;
+    
+    &__show__btn {
+      all: unset;
+      display: none;
+      @include respond-to(small) {
+        display: block;
+        width: fit-content;
+        height: fit-content;
+        position: absolute;
+        color: t.$text-colour--primary;
+        transform: translate(18rem, -0.25rem);
+        transition: transform 0.7s ease;
+      }
+      
+      &--hidden {
+        transform: translate(18rem, -1.5rem);
+      }
+    }
+    &__header {
+      display: flex;
+      gap: 0 0.5rem;
+      padding: 1.75rem 1rem;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      
+      &__app-name {
+        font-size: t.$font-size--medium;
+        margin: 0;
+      }
+      &__app-logo {
+        width: 6rem;
+      }
+    }
+    
+    &__divider{
+      height: 1px;
+      width: 100%;
+      background-image: linear-gradient(to right, rgba(224, 225, 226, 0), #e0e1e2 50%, rgba(224, 225, 226, 0.16));
+    }
+
+    &__nav {
+      padding: 1.75rem 0;
+      &__list {
+        width: 100%;
+        padding-left: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem 0;
+        list-style: none;
+
+        &__item {
+          height: 4rem;
+          width: 100%;
+        }
+      }
+
+      &__btn {
+        font-size: t.$font-size--small;
+        font-weight: bold;
+        padding: 0.75rem 1rem;
+        border-radius: t.$border-radius--large;
+        overflow: hidden;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0 12px;
+        color: t.$text-colour--secondary;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          background-color: t.$color-primary;
+          color: t.$text-colour--primary;
+          box-shadow: t.$box-shadow--default;
+        }
+
+        &__icon-wrapper {
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: 0.5rem;
+          border-radius: t.$border-radius--small;
+          color: t.$colour--completed;
+          background: black;
+          overflow: hidden;
+          box-shadow: t.$box-shadow--default;
+          transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+          
+          &--active {
+            color: t.$background-colour--secondary;
+            background: black;
+            box-shadow: none;
+          }
+        }
+
+        &--active {
+          color: t.$text-colour--primary;
+          background: t.$background-colour--secondary;
+          box-shadow: t.$box-shadow--default;
+        }
+
+        
+      }
+    }
+
+    &--visible {
+      @include respond-to(small) {
+        transform: translateX(0);
+      }
+    }
+    &--hidden {
+      @include respond-to(small) {
+        transform: translateX(-100%);
+      }
+    }
+
+    @include respond-to(small) {
+      width: 340px;
+      z-index: 3;
+      position: fixed;
+      background: t.$background-colour--primary;
+      height: 100%;
+      border-right: t.$border--default;
+
+      padding-right: 8px;
+    }
+  }
+
+  &__content {
+    width: calc(100% - 236px);
+    height: 100%;
+    @include respond-to(small) {
+      width: 100%;
+    }
+  }
+}

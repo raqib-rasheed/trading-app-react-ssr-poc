@@ -1,0 +1,38 @@
+@use "tokens" as t;
+
+
+@mixin button-reset {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: calc(t.$small-screen - 1px)) {
+      @content;
+    }
+  } @else if $breakpoint == medium {
+    @media (min-width: t.$small-screen) and (max-width: calc(t.$medium-screen - 1px)) {
+      @content;
+    }
+  } @else if $breakpoint == large {
+    @media (min-width: t.$medium-screen) and (max-width: calc(t.$large-screen - 1px)) {
+      @content;
+    }
+  } @else if $breakpoint == xlarge {
+    @media (min-width: t.$large-screen) and (max-width: calc(t.$extra-large-screen - 1px))  {
+      @content;
+    }
+  } @else if $breakpoint == xxlarge {
+    @media(min-width: t.$extra-large-screen) {
+      @content;
+    }
+  }
+}

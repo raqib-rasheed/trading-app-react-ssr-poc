@@ -1,0 +1,23 @@
+.tag {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+
+  &--success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &--warn {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  &--error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}

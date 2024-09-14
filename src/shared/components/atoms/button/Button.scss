@@ -1,0 +1,48 @@
+@import '@shared/styles/tokens';
+@import '@shared/styles/mixins';
+
+.button {
+  @include button-reset;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+
+  &--primary {
+    background-color: $color-primary;
+
+    &:hover {
+      background-color: $color-primary--highlight;
+      box-shadow: $box-shadow--default;
+    }
+  }
+
+  &--danger {
+    background-color: $color-danger;
+    &:hover {
+      background-color: $color-danger--highlight;
+      box-shadow: $box-shadow--default;
+    }
+  }
+
+  &--secondary {
+    background-color: $text-colour--secondary;
+    &:hover {
+      background-color: $text-colour--primary;
+      box-shadow: $box-shadow--default;
+      color: $background-colour--secondary;
+    }
+  }
+
+  &--icon {
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &--small {
+    padding: 0.125rem 0.25rem;
+  }
+}
